@@ -10,7 +10,6 @@ Automating customer flow in sauce labs demo. Framework used - Playwright Python
 4. [Test Structure](#test-structure)
 5. [HTML Report](#html-report)
 6. [Logging](#logging)
-7. [Contributing](#contributing)
 
 ---
 
@@ -60,6 +59,34 @@ To generate an HTML report of your test results, you can use the pytest-html plu
 
     pytest --maxfail=1 --disable-warnings --html=report.html
 
+### Test Structure
+The project is structured as follows:
+   
+      playwright-python-automation/
+      │
+      ├── pages/                         # Page Object Model (POM) classes for different pages
+      │   ├── cart_page.py               # Cart page interactions
+      │   ├── checkout_overview_page.py  # Checkout overview page interactions
+      │   ├── checkout_user_info_page.py # User info page interactions
+      │   ├── login_page.py              # Login page interactions
+      │   ├── product_page.py            # Product page interactions
+      │
+      ├── tests/                         # Test scripts
+      │   ├── test_checkout.py           # Test case for end-to-end checkout process
+      │
+      ├── utils/                         # Utility functions like price calculation
+      │   ├── common_utils.py            # Utility functions (e.g., calculate_total_price)
+      │
+      ├── requirements.txt               # List of dependencies
+      ├── pytest.ini                     # Pytest configuration
+      ├── README.md                      # Project README
+      └── report.html                    # Generated test report
+
+#### Key Files:
+- **Page Object Model (POM)**: The pages directory contains classes that represent various pages in the application under test. Each class encapsulates actions and elements related to a particular page.
+  - LoginPage, ProductPage, CartPage, etc.
+- **Test Case**: The test case test_checkout.py in the tests folder orchestrates the user flow of logging in, selecting products, adding them to the cart, and completing checkout.
+- **Utilities**: The utils/common_utils.py file contains helper functions like calculate_total_price, which is used to compute the price of items including tax.
 ## HTML Report
 
 By using **pytest-html**, you can generate detailed HTML reports for your tests. Once you run the tests with the `--html=report.html` flag, you can open the `report.html` file in a browser to view:
