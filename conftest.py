@@ -14,7 +14,7 @@ def playwright_instance() -> Generator[Playwright, None, None]:
     pw.stop()
 
 
-@pytest.fixture(scope="session", params=["chromium"])
+@pytest.fixture(scope="session", params=["chromium", "firefox"])
 def browser(playwright_instance: Playwright, request) -> Generator[Browser, None, None]:
     browser = playwright_instance[request.param].launch(headless=False)
     yield browser
