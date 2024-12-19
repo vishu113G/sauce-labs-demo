@@ -30,8 +30,8 @@ The tests use the **Playwright** library for browser automation, **pytest** as t
    First, clone this repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/playwright-python-automation.git
-   cd playwright-python-automation
+   git clone https://github.com/vishu113G/sauce-labs-demo.git
+   git checkout master
    
 2. **Create a Virtual Environment (optional but recommended)**: 
    ```bash
@@ -109,7 +109,7 @@ We use **Python's logging module** to capture important details about the test e
 
 ### Logging Configuration:
 
-The logger is set up at the beginning of each test file:
+The logger is set up at the beginning of each test file where it is used:
 
 ```python
 import logging
