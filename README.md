@@ -52,7 +52,7 @@ The tests use the **Playwright** library for browser automation, **pytest** as t
 To run the tests, simply use **pytest** from the command line.
 
 ### Running all tests:
-    playwright install
+    pytest
 
 ### Running tests with HTML Report:
 To generate an HTML report of your test results, you can use the pytest-html plugin:
